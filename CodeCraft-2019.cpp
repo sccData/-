@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
         int current_road;
         current_car.answer.start_time = start_time;
         start_time += ((guide_map.min_cost[CrossInfo.CrossMap[current_car.origin]][CrossInfo.CrossMap[current_car.destination]] / current_car.maxSpeed) + 1);
-        start_time %= 1097;
+        start_time %= 997;
         start_time = max(start_time,current_car.StartUpTime);
         while(current_cross != current_car.destination )
         {
@@ -136,6 +136,10 @@ int main(int argc, char *argv[])
                 current_road = guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[1];
             else if(guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[0] == 2)
                 current_road = guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[rand() % 2 + 1];
+            else if(guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[0] == 3)
+                current_road = guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[rand() % 3 + 1];
+            else if(guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[0] == 4)
+                current_road = guide_map.MapMatrix[current_cross][current_car.destination].MyChoice[rand() % 4 + 1];
 
             if(current_road == -1)
             {

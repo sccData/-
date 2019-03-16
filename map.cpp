@@ -68,7 +68,7 @@
 //This is the policy based on the shortest path
 void GuideMap::calculate_map(Cross_Info &CrossInfo,Road_Info &RoadInfo)
 {
-    mod_dijkstra(CrossInfo);
+    dijkstra(CrossInfo);
 
     for(int i = 1;i<CrossInfo.NumCross+1;i++)
     {
@@ -129,7 +129,7 @@ void GuideMap::calculate_map(Cross_Info &CrossInfo,Road_Info &RoadInfo)
     return;
 }
 
-void GuideMap::mod_dijkstra(Cross_Info &CrossInfo)
+void GuideMap::dijkstra(Cross_Info &CrossInfo)
 {
     int i, j, k, m, minimum;
     int node_num = CrossInfo.NumCross;

@@ -20,7 +20,7 @@ struct GuideMap
     int map_size;
     GuideMap(Cross_Info &CrossInfo) :min_cost(nullptr),shortest_path(nullptr),map_size(CrossInfo.NumCross){ MapMatrix.resize(map_size+1,vector<Choice>(map_size+1)); }
     void calculate_map(Cross_Info &CrossInfo,Road_Info &RoadInfo);
-    void mod_dijkstra(Cross_Info &CrossInfo);
+    void dijkstra(Cross_Info &CrossInfo);
     ~GuideMap();
 };
 
